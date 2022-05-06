@@ -2406,7 +2406,7 @@
         // reorder only if the items are not objects
         // or a key attribute has been provided
         var doReorder = !isObject && mustReorder && typeof _item === T_OBJECT || keyAttr;
-        var oldPos = oldItems.indexOf(itemId);
+        var oldPos = doReorder ? oldItems.indexOf(itemId) : -1;
         var isNew = oldPos === -1;
         var pos = !isNew && doReorder ? oldPos : i;
         // does a tag exist in this position?
